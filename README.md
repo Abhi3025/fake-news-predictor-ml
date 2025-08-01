@@ -1,0 +1,1 @@
+This machine learning project uses the logistic regression model on article titles and text-content to predict whether an article is real or fake. 
