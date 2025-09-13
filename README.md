@@ -1,4 +1,4 @@
-# Machine Learning Fake News Detector
+# Machine Learning Fake News Predictor
 
 A machine learning project that classifies news articles as real or fake using Natural Language Processing (NLP) techniques and Logistic Regression. The model achieves **91.14% accuracy** on test data by analyzing textual content and applying advanced text preprocessing methods.
 
