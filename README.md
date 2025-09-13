@@ -2,11 +2,11 @@
 
 A machine learning project that classifies news articles as real or fake using Natural Language Processing (NLP) techniques and Logistic Regression. The model achieves **91.14% accuracy** on test data by analyzing textual content and applying advanced text preprocessing methods.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project addresses the critical issue of misinformation by building an automated system to detect fake news. Using a dataset of 7,000 news articles, the model processes text through stemming, stopword removal, and TF-IDF vectorization before applying logistic regression for binary classification.
 
-## 🔧 Technologies Used
+## Technologies Used
 
 - **Python 3.11**
 - **Machine Learning:** scikit-learn
@@ -15,14 +15,14 @@ This project addresses the critical issue of misinformation by building an autom
 - **Text Vectorization:** TF-IDF Vectorizer
 - **Model:** Logistic Regression
 
-## 📊 Dataset
+## Dataset
 
 - **Size:** 7,000 news articles
 - **Features:** Title, Text content
 - **Labels:** Binary classification (0 = Real, 1 = Fake)
 - **Split:** 90% training, 10% testing with stratified sampling
 
-## 🚀 Key Features
+## Key Features
 
 ### Advanced Text Preprocessing
 - **Stemming:** Reduces words to root forms using Porter Stemmer
@@ -35,7 +35,7 @@ This project addresses the critical issue of misinformation by building an autom
 - **Logistic Regression:** Binary classification with L2 regularization
 - **Stratified Splitting:** Ensures balanced representation in train/test sets
 
-## 📈 Model Performance
+## Model Performance
 
 | Metric | Training Data | Test Data |
 |--------|---------------|-----------|
@@ -43,7 +43,7 @@ This project addresses the critical issue of misinformation by building an autom
 
 The model demonstrates strong generalization with minimal overfitting, indicating robust performance on unseen data.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 fake-news-detector/
@@ -53,7 +53,7 @@ fake-news-detector/
 └── requirements.txt            # Dependencies
 ```
 
-## 🔍 How It Works
+## How It Works
 
 1. **Data Loading:** Imports CSV dataset with news articles and labels
 2. **Preprocessing:** 
@@ -65,7 +65,7 @@ fake-news-detector/
 5. **Evaluation:** Tests model performance and provides prediction system
 
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - **Deep Learning Models:** Implement LSTM or BERT for improved accuracy
 - **Feature Engineering:** Add sentiment analysis and readability scores
@@ -73,7 +73,7 @@ fake-news-detector/
 - **Larger Dataset:** Expand training data for better generalization
 - **Multi-class Classification:** Extend beyond binary to detect specific types of misinformation
 
-## 📊 Technical Insights
+## Technical Insights
 
 - **Vocabulary Size:** 49,005 unique terms after preprocessing
 - **Feature Selection:** TF-IDF effectively captures important text patterns
