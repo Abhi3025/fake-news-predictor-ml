@@ -1,81 +1,189 @@
-# Machine Learning Fake News Predictor
+# 📰 Fake News Detector
 
-A machine learning project that classifies news articles as real or fake using Natural Language Processing (NLP) techniques and Logistic Regression. The model achieves **91.14% accuracy** on test data by analyzing textual content and applying advanced text preprocessing methods.
+A machine learning web application that classifies news articles as **Real** or **Fake** using Natural Language Processing (NLP) and Logistic Regression. The application is built with **Streamlit**, allowing users to either paste article text directly or provide a news article URL for automatic extraction and classification. The underlying model achieves **91.14% accuracy** on unseen test data. The application trains a Logistic Regression model on TF-IDF features and provides a simple interface for users to classify articles or URLs.
+
+## Demo Features
+
+* Paste a news headline and article text for instant predictions
+* Analyze articles directly from a URL
+* Automatic article title and content extraction
+* Displays prediction confidence
+* Save previously analyzed articles for later reference
+* Clean, responsive Streamlit interface
+
+---
 
 ## Project Overview
 
-This project addresses the critical issue of misinformation by building an automated system to detect fake news. Using a dataset of 7,000 news articles, the model processes text through stemming, stopword removal, and TF-IDF vectorization before applying logistic regression for binary classification.
+This project was originally developed to explore machine learning techniques for fake news detection. A Logistic Regression classifier is trained on thousands of labeled news articles using TF-IDF vectorization and text preprocessing.
+
+The project has since been expanded into a fully interactive **Streamlit web application**, making the model accessible through a simple user interface without requiring users to run Jupyter notebooks or interact with Python code directly. The app supports both manual text input and automatic article extraction from URLs before performing classification.
+
+---
 
 ## Technologies Used
 
-- **Python 3.11**
-- **Machine Learning:** scikit-learn
-- **Data Processing:** pandas, numpy
-- **NLP:** NLTK (Natural Language Toolkit)
-- **Text Vectorization:** TF-IDF Vectorizer
-- **Model:** Logistic Regression
+### Machine Learning
+
+* Python 3
+* scikit-learn
+* pandas
+* NumPy
+* NLTK
+* TF-IDF Vectorizer
+* Logistic Regression
+
+### Web Application
+
+* Streamlit
+* Requests
+* BeautifulSoup4
+
+---
 
 ## Dataset
 
-- **Size:** 7,000 news articles
-- **Features:** Title, Text content
-- **Labels:** Binary classification (0 = Real, 1 = Fake)
-- **Split:** 90% training, 10% testing with stratified sampling
+* **7,000 labeled news articles**
+* Features:
+
+  * Article Title
+  * Article Text
+* Labels:
+
+  * **0 = Real**
+  * **1 = Fake**
+
+---
 
 ## Key Features
 
-### Advanced Text Preprocessing
-- **Stemming:** Reduces words to root forms using Porter Stemmer
-- **Stopword Removal:** Eliminates common English words that don't contribute to classification
-- **Text Cleaning:** Removes non-alphabetic characters and converts to lowercase
-- **Missing Value Handling:** Fills null values with empty strings
-
 ### Machine Learning Pipeline
-- **TF-IDF Vectorization:** Converts text to numerical features (49,005 features)
-- **Logistic Regression:** Binary classification with L2 regularization
-- **Stratified Splitting:** Ensures balanced representation in train/test sets
+
+* Text preprocessing
+
+  * Lowercasing
+  * Stopword removal
+  * Text cleaning
+* TF-IDF feature extraction
+* Logistic Regression classifier
+* Automatic model training when the application launches
+
+### Streamlit Web Application
+
+Users can classify articles in two different ways:
+
+#### 1. Manual Text Input
+
+Enter:
+
+* Article headline
+* Article body
+
+The model predicts whether the article is real or fake and displays its confidence score.
+
+#### 2. URL Analysis
+
+Instead of copying an article, users can simply paste a news article URL.
+
+The application automatically:
+
+* Downloads the webpage
+* Extracts the title
+* Extracts the article body
+* Runs the prediction
+* Displays the result
+
+This eliminates the need to manually copy and paste article content.
+
+### Saved Sources
+
+After making a prediction, users can save analyzed articles within the current session for future reference. Saved articles include:
+
+* Title
+* Prediction
+* Confidence score
+* Full article text
+
+---
 
 ## Model Performance
 
-| Metric | Training Data | Test Data |
-|--------|---------------|-----------|
-| Accuracy| 94.83%       | **91.14%** |
+| Metric   | Training |    Testing |
+| -------- | -------: | ---------: |
+| Accuracy |   94.83% | **91.14%** |
 
-The model demonstrates strong generalization with minimal overfitting, indicating robust performance on unseen data.
+The model demonstrates strong generalization with minimal overfitting on unseen articles.
+
+---
 
 ## Project Structure
 
+```text
+fake-news-predictor/
+│
+├── app.py                 # Streamlit web application
+├── main.ipynb             # Original notebook implementation
+├── articles_dataset.csv   # Training dataset
+├── requirements.txt       # Python dependencies
+├── README.md
+└── .gitignore
 ```
-fake-news-detector/
-├── fake_news_detector.ipynb    # Main notebook with complete implementation
-├── articles_dataset.csv        # Dataset (7,000 articles)
-├── README.md                   # Project documentation
-└── requirements.txt            # Dependencies
+
+---
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Abhi3025/fake-news-predictor-ml.git
+cd fake-news-predictor-ml
 ```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Streamlit application:
+
+```bash
+streamlit run app.py
+```
+
+---
 
 ## How It Works
 
-1. **Data Loading:** Imports CSV dataset with news articles and labels
-2. **Preprocessing:** 
-   - Merges title and text content
-   - Applies stemming and removes stopwords
-   - Handles missing values
-3. **Vectorization:** Converts text to TF-IDF numerical features
-4. **Training:** Fits Logistic Regression model on processed data
-5. **Evaluation:** Tests model performance and provides prediction system
+1. Load the labeled news dataset
+2. Clean and preprocess article text
+3. Convert text into TF-IDF feature vectors
+4. Train a Logistic Regression classifier
+5. Accept user input (text or URL)
+6. Predict whether the article is Real or Fake
+7. Display prediction confidence
+8. Optionally save the analyzed article during the session
 
+---
 
-## Future Enhancements
+## Future Improvements
 
-- **Deep Learning Models:** Implement LSTM or BERT for improved accuracy
-- **Feature Engineering:** Add sentiment analysis and readability scores
-- **Web Interface:** Create Flask/Streamlit app for real-time predictions
-- **Larger Dataset:** Expand training data for better generalization
-- **Multi-class Classification:** Extend beyond binary to detect specific types of misinformation
+* Deploy the application publicly
+* Train on a larger and more diverse dataset
+* Experiment with transformer-based models (BERT, RoBERTa)
+* Improve article extraction for additional news websites
+* Display probability distributions and model explanations
+* Add article history and persistent storage
 
-## Technical Insights
+---
 
-- **Vocabulary Size:** 49,005 unique terms after preprocessing
-- **Feature Selection:** TF-IDF effectively captures important text patterns
-- **Model Choice:** Logistic Regression provides interpretable results with strong performance
-- **Cross-validation:** Stratified split ensures balanced class representation
+## Technical Highlights
+
+* **91.14% classification accuracy**
+* TF-IDF feature engineering
+* Logistic Regression classifier
+* Automatic URL scraping with BeautifulSoup
+* Session-based article management
+* Responsive Streamlit interface
+* End-to-end fake news prediction workflow from raw article or URL
