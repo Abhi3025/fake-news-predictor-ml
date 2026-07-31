@@ -1,43 +1,33 @@
-# 📰 Fake News Detector
+# Fake News Detector
 
 An end-to-end machine learning web application that classifies news articles as **Real** or **Fake** using Natural Language Processing (NLP) and Logistic Regression.
 
 [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://fake-news-predictor-ml-lvjbbtnheucxqekyt3bgd4.streamlit.app/)
 
-## 🚀 Live Demo
+## Live Demo
 
 ### **https://fake-news-predictor-ml-lvjbbtnheucxqekyt3bgd4.streamlit.app/**
 
 ---
 
-## 🎥 Demo
+## Features
 
-> **Watch a walkthrough of the application**
-
-<video src="assets/demo.mov" controls width="900"></video>
-
-If the video doesn't appear on GitHub, you can also download it directly from the `assets/demo.mov` file in this repository.
-
----
-
-## ✨ Features
-
-- 📝 Predict whether a news article is **Real** or **Fake**
-- 🔗 Analyze articles directly from a news article URL
-- 📄 Automatically extracts article titles and body text from webpages
-- 📊 Displays prediction confidence
-- 💾 Save analyzed articles during the current session
-- ⚡ Fast, responsive Streamlit interface
+- Predict whether a news article is **Real** or **Fake**
+- Analyze articles directly from a news article URL
+- Automatically extracts article titles and body text from webpages
+- Displays prediction confidence
+- Save analyzed articles during the current session
+- Fast, responsive Streamlit interface
 
 ---
 
-## 📖 Overview
+## Overview
 
 Fake News Detector combines machine learning with an interactive web interface to make fake news detection simple and accessible.
 
 The application supports two prediction methods:
 
-### 📝 Text Input
+### Text Input
 
 Users can paste:
 
@@ -46,7 +36,7 @@ Users can paste:
 
 The model processes the text and predicts whether the article is **Real** or **Fake**.
 
-### 🔗 URL Input
+### URL Input
 
 Instead of copying article text manually, users can simply paste a news article URL.
 
@@ -60,7 +50,7 @@ The application automatically:
 
 ---
 
-## 🧠 Machine Learning Pipeline
+## Machine Learning Pipeline
 
 The prediction model follows the following workflow:
 
@@ -73,7 +63,7 @@ The prediction model follows the following workflow:
 
 ---
 
-## 📊 Model Performance
+## Model Performance
 
 | Metric | Training | Testing |
 |---------|---------:|--------:|
@@ -83,7 +73,7 @@ The model demonstrates strong generalization with minimal overfitting on unseen 
 
 ---
 
-## 🛠️ Technologies
+## Technologies
 
 ### Machine Learning
 
@@ -103,13 +93,10 @@ The model demonstrates strong generalization with minimal overfitting on unseen 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 fake-news-predictor/
-│
-├── assets/
-│   └── demo.mov
 │
 ├── app.py                 # Streamlit web application
 ├── main.ipynb             # Original notebook implementation
@@ -121,7 +108,7 @@ fake-news-predictor/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository:
 
@@ -144,13 +131,13 @@ streamlit run app.py
 
 Then open:
 
-```
+```text
 http://localhost:8501
 ```
 
 ---
 
-## 📈 Dataset
+## Dataset
 
 - **7,000+ labeled news articles**
 - Features:
@@ -162,21 +149,21 @@ http://localhost:8501
 
 ---
 
-## 💡 Technical Highlights
+## Technical Highlights
 
-- ✅ **91.14% test accuracy**
-- ✅ TF-IDF feature engineering
-- ✅ Logistic Regression classifier
-- ✅ Natural Language Processing (NLP)
-- ✅ Automatic webpage scraping
-- ✅ Real-time predictions
-- ✅ Interactive Streamlit web application
-- ✅ URL-based article analysis
-- ✅ Session-based saved article management
+- **91.14% test accuracy**
+- TF-IDF feature engineering
+- Logistic Regression classifier
+- Natural Language Processing (NLP)
+- Automatic webpage scraping
+- Real-time predictions
+- Interactive Streamlit web application
+- URL-based article analysis
+- Session-based saved article management
 
 ---
 
-## 🚀 Future Improvements
+## Future Improvements
 
 - Fine-tune transformer models (BERT, RoBERTa)
 - Train on a larger and more diverse dataset
@@ -187,7 +174,7 @@ http://localhost:8501
 
 ---
 
-## ⭐ Try It Yourself
+## Try It Yourself
 
 Click below to use the application without installing anything locally.
 
